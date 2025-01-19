@@ -214,6 +214,7 @@ main a:hover {
     grid-template-columns: 2fr 3fr;
     padding: 16px;
     gap: 16px;
+    height: 50vh;
 }
 
 .p-image {
@@ -223,6 +224,12 @@ main a:hover {
     justify-content: center;
     background-color: var(--azul-escuro);
     border-radius: 20px;
+    padding: 16px;
+}
+
+.p-image img {
+    width: 30vw;
+    height: 30vh;
 }
 
 .p-desc {
