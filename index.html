@@ -6,7 +6,7 @@
     <title>Portifólio</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <script src=""></script>
+    <script src="static/main.js"></script>
     <script src="https://kit.fontawesome.com/dd6d59aeab.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,12 +15,16 @@
             <img src="../images/perfil.webp" alt="">
             <h2>Jonathan Lago</h2>
         </div>
+        <div class="hamburger">
+            <div id="ham1"></div>
+            <div id="ham2"></div>
+            <div id="ham3"></div>
+        </div>
         <nav>
             <a href="#home">Home</a>
             <a href="#sobre">Sobre</a>
             <a href="#projetos">Projetos</a>
             <a href="#contato">Contato</a>
-            </ul>
         </nav>
     </header>
     <main>
@@ -135,5 +139,28 @@
             <p>©Copyright 2025. Feito por Jonathan Lago</p>
         </div>
     </footer>
+    <!-- <script>
+        hamb = false
+
+        function hamburger() {
+            hambElement = document.getElementsByClassName("hamburger")[0]
+            if (!hamb) {
+                top = hambElement.children[0]
+                mid = hambElement.children[1]
+                bottom = hambElement.children[2]
+                top.style.transform = "rotate(45deg)"
+                top.style.position = "8px"
+                mid.style.display = "none"
+                bottom.style.transform = "rotate(135deg)"
+                bottom.style.position = "-8px"
+
+            } else {
+
+            }
+        }
+
+
+        document.getElementsByClassName("hamburger")[0].addEventListener("click", hamburger)
+    </script> -->
 </body>
 </html>

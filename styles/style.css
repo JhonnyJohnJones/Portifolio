@@ -18,6 +18,7 @@
     border: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -41,14 +42,16 @@ i {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0px;
     display: grid;
     grid-auto-flow: column;
     padding: 16px;
     box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.1);
     background-color: var(--branco);
-    z-index: 2;
+    z-index: 9;
+    height: 80px;
+    width: 100%;
 }
 
 .title {
@@ -85,9 +88,12 @@ nav a:hover {
     transition: 0.2s ease-in-out;
 }
 
-
+.hamburger {
+    display: none;
+}
 
 main {
+    margin-top: 100px;
     padding: 0px 16px;
     display: grid;
     grid-template-columns: 1fr;
@@ -152,7 +158,8 @@ main a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    justify-content: center;
+    height: 80vh;
 }
 
 .dual {
@@ -214,7 +221,7 @@ main a:hover {
     grid-template-columns: 2fr 3fr;
     padding: 16px;
     gap: 16px;
-    height: 50vh;
+    height: fit-content;
 }
 
 .p-image {
@@ -250,8 +257,9 @@ main a:hover {
 }
 
 .c-conts{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
     width: 60vw;
 }
 
@@ -317,3 +325,165 @@ footer {
     width: fit-content;
 }
 
+
+@media (max-width: 900px) {
+    * {
+        overflow-x: hidden;
+    }
+
+    .hamburger, .title, h1, h2, h3, h4, p, a, i, img {
+        overflow-y: hidden;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        align-items: end;
+    }
+
+    .hamburger div {
+        width: 32px;
+        height: 8px;
+        background-color: var(--preto);
+        transition: 0.2s ease-in-out;
+    }
+
+    nav {
+        position: fixed;
+        top: 80px;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        z-index: 3;
+        background-color: var(--azul-medio);
+        gap: 8px;
+        border-radius: 0 0 0 8px;
+    }
+
+    nav a {
+        padding: 12px;
+        font-size: 28px;
+        background-color: var(--azul-medio);
+        color: var(--branco);
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a:nth-child(5) {
+        border-radius: 0 0 0 8px;
+    }
+
+    nav a:hover {
+        background-color: var(--azul-claro2);
+        color: var(--azul-escuro);
+        transition: 0.2s ease-in-out;
+        translate: 0px -2px;
+        text-decoration: none;
+    }
+
+    main h1 {
+        font-size: 52px;
+    }
+
+    main a {
+        font-size: 24px;
+    }
+
+    .home {
+        width: 100%;
+    }
+
+    .home p {
+        width: 100%;
+    }
+
+    .about {
+        height: fit-content;
+        margin: 5vh 0;
+    }
+
+    .dual {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .right p {
+        font-size: 20px;
+    }
+
+    .left p {
+        font-size: 20px;
+    }
+
+    .projects {
+        height: min-content;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 16px;
+        margin-bottom: 10vh;
+    }
+
+    /* .project:nth-child(1) {order: 2;}
+    .project:nth-child(2) {order: 1;} */
+
+    .p-image {
+        height: fit-content;
+    }
+
+    .p-image img {
+        width: 80vw;
+        height: 40vw;
+    }
+
+    .p-desc {
+        justify-content: flex-start;
+        height: fit-content;
+    }
+
+    .p-desc p {
+        font-size: 20px;
+    }
+
+    .c-conts {
+        width: 100%;
+    }
+
+    .contact a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 14px;
+    }
+
+    .contact a, .contact i {
+        font-size: 40px;
+    }
+
+    .contact p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        width: 100%;
+        text-align: center;
+    }
+
+    .f-info {
+        display: grid;
+        grid-template-columns: 7fr 1fr;
+        gap: 20px;
+    }
+
+    .f-desc {
+        width: 100%;
+    }
+
+    .f-sociais {
+        flex-wrap: wrap;
+    }
+}
